@@ -16,21 +16,12 @@ Summary: KDE library for holiday handling
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: ninja
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5UiPlugin)
-BuildRequires: cmake(Qt5Designer)
-BuildRequires: cmake(KF5ItemViews)
-BuildRequires: cmake(Gettext)
-BuildRequires: cmake(PythonInterp)
-BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(Qt5Core)
-BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Test)
 
 %description
-KDE library for holiday handling
+KDE library for holiday handling.
 
 %package -n %{libname}
 Summary: KDE library for holiday handling
@@ -38,7 +29,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-KDE library for holiday handling
+KDE library for holiday handling.
 
 %package -n %{devname}
 Summary: Development files for %{name}
@@ -70,4 +61,3 @@ Development files (Headers etc.) for %{name}.
 %{_libdir}/*.so
 %{_libdir}/cmake/*
 %{_libdir}/qt5/mkspecs/modules/*.pri
-%{_libdir}/qt5/plugins/designer/holidays5widgets.so
