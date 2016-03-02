@@ -12,6 +12,7 @@ Version:	15.12.2
 %endif
 Release:	1
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:	kholidays-15.12.2-isnan.patch
 Summary: KDE library for holiday handling
 URL: http://kde.org/
 License: GPL
@@ -41,9 +42,11 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %setup -q
-%cmake_kde5
+%apply_patches
 
 %build
+%cmake_kde5
+cd ../
 %ninja -C build
 
 %install
