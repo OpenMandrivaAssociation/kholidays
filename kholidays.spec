@@ -3,7 +3,7 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version:	15.12.3
+Version:	16.04.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -12,7 +12,6 @@ Version:	15.12.3
 %endif
 Release:	1
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:	kholidays-15.12.2-isnan.patch
 Summary: KDE library for holiday handling
 URL: http://kde.org/
 License: GPL
@@ -57,7 +56,7 @@ cd ../
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
-%{_libdir}/*.so.4*
+%{_libdir}/qt5/qml/org/kde/kholidays
 
 %files -n %{devname}
 %{_includedir}/*
