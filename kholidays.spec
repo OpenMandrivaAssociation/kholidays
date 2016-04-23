@@ -19,6 +19,7 @@ Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Test)
+BuildRequires: cmake(Qt5Qml)
 
 %description
 KDE library for holiday handling.
