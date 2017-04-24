@@ -20,6 +20,7 @@ BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
+BuildRequires: cmake(Qt5Quick)
 
 %description
 KDE library for holiday handling.
