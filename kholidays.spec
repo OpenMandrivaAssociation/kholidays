@@ -3,15 +3,10 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version:	17.12.1
-%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %{is_beta}
-%define ftpdir unstable
-%else
-%define ftpdir stable
-%endif
+Version:	5.43.0
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Release:	1
-Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
 License: GPL
@@ -60,7 +55,6 @@ find .%{_datadir}/locale -name "*.qm" |while read r; do
 done
 
 %files -f %{name}.lang
-%{_datadir}/kf5/libkholidays
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
