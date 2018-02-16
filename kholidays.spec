@@ -6,6 +6,7 @@ Name: kholidays
 Version:	5.43.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Release:	1
+Epoch:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
