@@ -3,7 +3,7 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version:	5.47.0
+Version:	5.48.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Release:	1
 Epoch:	1
