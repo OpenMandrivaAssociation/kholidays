@@ -3,10 +3,9 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version:	5.56.0
+Version:	5.57.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Release:	2
-Epoch:	1
+Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
@@ -17,6 +16,8 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
 BuildRequires: cmake(Qt5Quick)
+# For QCH format docs
+BuildRequires: qt5-assistant
 
 %description
 KDE library for holiday handling.
@@ -36,6 +37,14 @@ Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
+
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
 
 %prep
 %setup -q
@@ -66,3 +75,6 @@ done
 %{_libdir}/*.so
 %{_libdir}/cmake/*
 %{_libdir}/qt5/mkspecs/modules/*.pri
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
