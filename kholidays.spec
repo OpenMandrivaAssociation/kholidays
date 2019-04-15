@@ -17,6 +17,7 @@ BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
 BuildRequires: cmake(Qt5Quick)
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 
 %description
