@@ -3,9 +3,9 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version:	5.57.0
+Version: 5.57.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Release:	1
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
@@ -19,6 +19,7 @@ BuildRequires: cmake(Qt5Quick)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
+Obsoletes: %{name} < 1:5.57.0
 
 %description
 KDE library for holiday handling.
@@ -27,6 +28,7 @@ KDE library for holiday handling.
 Summary: KDE library for holiday handling
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
+Obsoletes: %{_lib}KF5Holidays5 < 1:5.57.0
 
 %description -n %{libname}
 KDE library for holiday handling.
@@ -48,8 +50,7 @@ Suggests: %{devname} = %{EVRD}
 Developer documentation for %{name} for use with Qt Assistant
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %cmake_kde5
@@ -62,7 +63,7 @@ TOPDIR="$(pwd)"
 
 cd %{buildroot}
 find .%{_datadir}/locale -name "*.qm" |while read r; do
-	echo "%lang($(echo $r |cut -d/ -f5)) $(echo $r |cut -b2-)" >>${TOPDIR}/%{name}.lang
+ echo "%lang($(echo $r |cut -d/ -f5)) $(echo $r |cut -b2-)" >>${TOPDIR}/%{name}.lang
 done
 
 %files -f %{name}.lang
