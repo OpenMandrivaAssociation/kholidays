@@ -3,7 +3,7 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version: 5.89.0
+Version: 5.90.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
