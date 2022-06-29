@@ -5,7 +5,7 @@
 Name: kholidays
 Version: 5.95.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
@@ -19,7 +19,6 @@ BuildRequires: cmake(Qt5Quick)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
-Obsoletes: %{name} < 1:5.57.0
 
 %description
 KDE library for holiday handling.
@@ -47,7 +46,7 @@ Group: Documentation
 Suggests: %{devname} = %{EVRD}
 
 %description -n %{name}-devel-docs
-Developer documentation for %{name} for use with Qt Assistant
+Developer documentation for %{name} for use with Qt Assistant.
 
 %prep
 %autosetup -p1
