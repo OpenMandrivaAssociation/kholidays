@@ -3,9 +3,9 @@
 %define devname %mklibname KF5Holidays -d
 
 Name: kholidays
-Version: 5.95.0
+Version: 5.96.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Release: 2
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
