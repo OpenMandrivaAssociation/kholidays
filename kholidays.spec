@@ -5,7 +5,7 @@
 Name: kholidays
 Version: 5.108.0
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE library for holiday handling
 URL: http://kde.org/
@@ -27,7 +27,6 @@ KDE library for holiday handling.
 Summary: KDE library for holiday handling
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
-Obsoletes: %{_lib}KF5Holidays5 < 1:5.57.0
 
 %description -n %{libname}
 KDE library for holiday handling.
